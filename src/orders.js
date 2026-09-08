@@ -5,7 +5,7 @@ export function userOrderSummary(userId) {
   const mine = orders.filter((o) => o.userId === userId);
 
   return {
-    user: user.name,
+    user: user ? user.name : null,
     orderCount: mine.length,
     total: mine.reduce((sum, o) => sum + o.total, 0),
   };
