@@ -5,14 +5,14 @@ export function userOrderSummary(userId) {
   const mine = orders.filter((o) => o.userId === userId);
 
   return {
-    user: user ? user.name : null,
+    user: user.name,
     orderCount: mine.length,
     total: mine.reduce((sum, o) => sum + o.total, 0),
   };
 }
 
 export function listOrders(page, limit) {
-  const start = page * limit;
+  const start = (page - 1) * limit;
   const end = start + limit;
 
   return {
