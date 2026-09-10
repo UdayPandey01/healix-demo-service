@@ -12,7 +12,7 @@ export function userOrderSummary(userId) {
 }
 
 export function listOrders(page, limit) {
-  const start = page * limit;
+  const start = (page - 1) * limit;
   const end = start + limit;
 
   return {
