@@ -35,7 +35,7 @@ test("retries give up instead of looping forever", async () => {
 });
 
 test("an empty body does not throw a raw SyntaxError", async () => {
-  const res = new Response("", { status: 204 });
+  const res = new Response(null, { status: 204 });
   await assert.doesNotReject(() => parseResponse(res));
 });
 
